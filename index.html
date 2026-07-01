@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Иброхим Эргешев · Senior Frontend Engineer · Портфолио</title>
+  <meta name="description" content="Senior Frontend Engineer с 5+ годами опыта. React, Next.js, TypeScript. Лид-разработчик CRM Rentura, Skladoff24. Портфолио и интерактивное резюме.">
+  <meta property="og:title" content="Иброхим Эргешев · Senior Frontend Engineer">
+  <meta property="og:description" content="React, Next.js, TypeScript. Руководил frontend-разработкой CRM Rentura. 10+ коммерческих проектов.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ibrokhim.ru/resume">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f1f5f9;
+      color: #0b1a33;
+      transition: background 0.4s ease, color 0.4s ease;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    body.dark {
+      background: #0a0f1e;
+      color: #e9edf5;
+    }
+    .container {
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 3.5rem;
+      padding: 2.8rem 2.5rem;
+      box-shadow: 0 30px 60px -20px rgba(0,0,0,0.2), 0 10px 30px -10px rgba(0,0,0,0.05);
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+      border: 1px solid rgba(255,255,255,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .container::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(79,70,229,0.05) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .container::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(236,72,153,0.04) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    body.dark .container {
+      background: rgba(15, 23, 42, 0.7);
+      border-color: rgba(255,255,255,0.06);
+      box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6);
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+    .glass-card {
+      background: rgba(255,255,255,0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 2rem;
+      padding: 1.8rem;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 8px 20px -8px rgba(0,0,0,0.04);
+    }
+    body.dark .glass-card {
+      background: rgba(30, 41, 59, 0.3);
+      border-color: rgba(255,255,255,0.05);
+      box-shadow: 0 8px 20px -8px rgba(0,0,0,0.3);
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(99, 102, 241, 0.25);
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+    }
+    body.dark .glass-card:hover {
+      border-color: rgba(129, 140, 248, 0.2);
+    }
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.8rem;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.7rem 1.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: #0b1a33;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+      box-shadow: 0 6px 14px rgba(11, 26, 51, 0.15);
+      letter-spacing: 0.01em;
+    }
+    .btn-outline {
+      background: transparent;
+      color: #0b1a33;
+      border: 1.5px solid rgba(11, 26, 51, 0.15);
+      box-shadow: none;
+    }
+    body.dark .btn {
+      background: #e9edf5;
+      color: #0b1a33;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+    }
+    body.dark .btn-outline {
+      background: transparent;
+      color: #e9edf5;
+      border-color: rgba(233, 237, 245, 0.2);
+    }
+    .btn:hover { transform: scale(1.04) translateY(-2px); opacity: 0.92; }
+    .btn-outline:hover { background: rgba(11,26,51,0.05); transform: scale(1.03); }
+    body.dark .btn-outline:hover { background: rgba(233,237,245,0.06); }
+    .profile-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.6rem;
+    }
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 20%; /* Смещает изображение вниз на 70% от верхнего края */
+      border: 4px solid rgba(255,255,255,0.8);
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.15);
+      transition: 0.4s ease;
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      margin-bottom: 0.8rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .avatar:hover {
+      transform: scale(1.02) rotate(-2deg);
+    }
+
+    body.dark .avatar {
+      border-color: rgba(30,41,59,0.6);
+    }
+    .name {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 0.2rem 0 0.1rem;
+      background: linear-gradient(135deg, #0b1a33 0%, #4f46e5 70%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    body.dark .name {
+      background: linear-gradient(135deg, #e9edf5 0%, #818cf8 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .role {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #1e293b;
+      background: rgba(79, 70, 229, 0.08);
+      padding: 0.3rem 2rem;
+      border-radius: 60px;
+      display: inline-block;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(79,70,229,0.05);
+    }
+    body.dark .role { color: #cbd5e1; background: rgba(129, 140, 248, 0.1); }
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .section-title span {
+      background: rgba(79,70,229,0.06);
+      padding: 0.1rem 0.8rem;
+      border-radius: 60px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .timeline-item {
+      border-left: 3px solid #4f46e5;
+      padding-left: 1.8rem;
+      padding-bottom: 1.8rem;
+      position: relative;
+      transition: 0.2s;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 0.3rem;
+      width: 12px;
+      height: 12px;
+      background: #4f46e5;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px rgba(79,70,229,0.15);
+      transition: 0.2s;
+    }
+    body.dark .timeline-item::before { border-color: #0f172a; }
+    .timeline-item:hover { border-left-color: #818cf8; }
+    .timeline-date { font-weight: 600; color: #4f46e5; font-size: 0.85rem; letter-spacing: 0.03em; text-transform: uppercase; }
+    .timeline-title { font-size: 1.2rem; font-weight: 700; }
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+    }
+    .tech-tag {
+      background: rgba(79,70,229,0.07);
+      padding: 0.15rem 1rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1e293b;
+      letter-spacing: 0.01em;
+      border: 1px solid rgba(79,70,229,0.04);
+    }
+    body.dark .tech-tag { background: rgba(129,140,248,0.08); color: #cbd5e1; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .stack-card {
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(4px);
+      padding: 1.2rem 1.2rem;
+      border-radius: 1.8rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    body.dark .stack-card { background: rgba(30,41,59,0.2); border-color: rgba(255,255,255,0.03); }
+    .stack-card:hover { background: rgba(255,255,255,0.5); transform: scale(1.02) translateY(-3px); }
+    body.dark .stack-card:hover { background: rgba(30,41,59,0.5); }
+    .stack-title { font-weight: 700; font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .project-card {
+      padding: 1.2rem 1.5rem 1.8rem;
+      border-radius: 2rem;
+      background: rgba(255,255,255,0.3);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    body.dark .project-card { background: rgba(30,41,59,0.2); border-color: rgba(255,255,255,0.03); }
+    .project-card:hover { transform: translateY(-8px); background: rgba(255,255,255,0.5); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08); }
+    body.dark .project-card:hover { background: rgba(30,41,59,0.45); }
+    .project-link { color: #4f46e5; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; transition: 0.2s; }
+    .project-link:hover { gap: 0.6rem; color: #6366f1; }
+    body.dark .project-link { color: #818cf8; }
+    .achievement-badge {
+      display: inline-block;
+      background: rgba(79,70,229,0.05);
+      padding: 0.4rem 1.4rem;
+      border-radius: 60px;
+      font-weight: 500;
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(79,70,229,0.06);
+      transition: 0.2s;
+    }
+    .achievement-badge:hover { background: rgba(79,70,229,0.08); transform: scale(1.02); }
+    body.dark .achievement-badge { background: rgba(129,140,248,0.06); border-color: rgba(129,140,248,0.05); }
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2.5rem;
+      justify-content: center;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: inherit;
+      transition: 0.2s;
+      padding: 0.3rem 0.8rem;
+      border-radius: 60px;
+    }
+    .contact-item:hover { color: #4f46e5; background: rgba(79,70,229,0.04); }
+    body.dark .contact-item:hover { color: #818cf8; background: rgba(129,140,248,0.04); }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(35px);
+      animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    .delay-1 { animation-delay: 0.06s; }
+    .delay-2 { animation-delay: 0.12s; }
+    .delay-3 { animation-delay: 0.18s; }
+    .delay-4 { animation-delay: 0.24s; }
+    .delay-5 { animation-delay: 0.32s; }
+    .delay-6 { animation-delay: 0.40s; }
+    .hover-lift { transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .hover-lift:hover { transform: translateY(-4px); }
+    .theme-toggle {
+      position: fixed;
+      right: 1.8rem;
+      top: 1.8rem;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 60px;
+      padding: 0.5rem 1.4rem;
+      font-weight: 600;
+      cursor: pointer;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 8px 20px -8px rgba(0,0,0,0.08);
+      transition: 0.3s;
+      font-size: 0.9rem;
+      color: #0b1a33;
+    }
+    body.dark .theme-toggle { background: rgba(30,41,59,0.4); border-color: rgba(255,255,255,0.06); color: #e9edf5; }
+    .theme-toggle:hover { transform: scale(1.03); }
+    @media (max-width: 640px) {
+      body { padding: 0.8rem; }
+      .container { padding: 1.5rem 1rem; border-radius: 2rem; }
+      .name { font-size: 2.2rem; }
+      .role { font-size: 1rem; padding: 0.2rem 1.2rem; }
+      .btn { padding: 0.5rem 1.2rem; font-size: 0.85rem; }
+      .section-title { font-size: 1.5rem; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .theme-toggle { right: 1rem; top: 1rem; padding: 0.3rem 1rem; font-size: 0.8rem; }
+      .avatar {
+        width: 120px;
+        height: 120px;
+        object-position: center 15%; /* на мобильных чуть выше, чтобы не ушла слишком низко */
+      }
+    }
+    @media (min-width: 641px) and (max-width: 900px) {
+      .grid-2 { grid-template-columns: 1fr 1fr; }
+    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #e2e8f0; }
+    ::-webkit-scrollbar-thumb { background: #4f46e5; border-radius: 12px; }
+    body.dark ::-webkit-scrollbar-track { background: #1e293b; }
+    .real-photo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      letter-spacing: 0.02em;
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    }
+    .real-photo span { opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+    <span id="themeIcon">🌙</span> <span id="themeLabel">Тема</span>
+  </button>
+
+  <div class="container fade-up">
+    <div class="content">
+      <!-- PROFILE -->
+      <div class="profile-wrap fade-up delay-1">
+        <img class="avatar real-photo" src="./img/фотка1.jpg" alt="Иброхим Эргешев · Senior Frontend Engineer" loading="lazy">
+        <h1 class="name">Иброхим Эргешев</h1>
+        <div class="role">Senior Frontend Engineer · React · Next.js · TypeScript</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; justify-content: center; margin-top: 0.2rem; font-size: 0.9rem; opacity:0.7;">
+          <span>📍 Москва и МО</span>
+          <span>⏳ 4+ лет опыта</span>
+          <span>🚀 20+ проектов</span>
+        </div>
+        <div class="btn-group">
+          <a href="#" class="btn" id="downloadPDF">📄 Скачать PDF</a>
+          <a href="https://github.com/89255620518" target="_blank" class="btn btn-outline">🐙 GitHub</a>
+          <a href="https://t.me/ibrokhim_developer" target="_blank" class="btn btn-outline">✈️ Telegram</a>
+          <a href="mailto:ibrokhim.ergeshev@mail.ru" class="btn btn-outline">✉️ Email</a>
+        </div>
+      </div>
+
+      <!-- ABOUT -->
+      <section style="margin: 2.8rem 0 2.5rem;" class="fade-up delay-2">
+        <div class="glass-card" style="border-radius: 2.5rem; padding: 2rem 2.2rem;">
+          <h2 class="section-title">👨‍💻 Обо мне</h2>
+          <p style="font-size: 1.1rem; max-width: 820px; line-height: 1.8; font-weight: 400;">
+            Senior Frontend Developer с более чем 5-летним опытом разработки коммерческих веб-приложений, CRM-систем и высоконагруженных SPA. Специализируюсь на <strong>React, Next.js и TypeScript</strong>. Руководил frontend-разработкой CRM Rentura, участвовал в проектировании архитектуры клиентской части и развитии продукта. Разработал более <strong>10 коммерческих проектов</strong> полного цикла — от идеи до запуска в продакшен.
+          </p>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section style="margin-bottom: 2.8rem;" class="fade-up delay-3">
+        <h2 class="section-title">💼 Опыт работы</h2>
+        <div class="glass-card" style="border-radius: 2.5rem; padding: 1.8rem 2rem;">
+          <div class="timeline-item">
+            <div class="timeline-date">2025 — настоящее время</div>
+            <div class="timeline-title">Lead Frontend Developer</div>
+            <div style="font-weight: 500; margin: 0.1rem 0 0.2rem; color: #4f46e5;">Skladoff24</div>
+            <p style="opacity:0.85; font-size:0.95rem;">Архитектура клиентской части, CI/CD, управление командой, внедрение Next.js 15, оптимизация производительности.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">React</span><span class="tech-tag">Next.js</span><span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Docker</span><span class="tech-tag">CI/CD</span>
+            </div>
+          </div>
+          <div class="timeline-item" style="border-left-color: #818cf8;">
+            <div class="timeline-date">2023 — 2024</div>
+            <div class="timeline-title">Lead Frontend Developer</div>
+            <div style="font-weight: 500; margin: 0.1rem 0 0.2rem; color: #818cf8;">CRM Rentura</div>
+            <p style="opacity:0.85; font-size:0.95rem;">Руководил фронтенд-командой (4 разработчика), проектировал модульную архитектуру, интеграция с REST/GraphQL, внедрение Storybook.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">React</span><span class="tech-tag">Redux Toolkit</span><span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Zustand</span><span class="tech-tag">React Query</span>
+            </div>
+          </div>
+          <div class="timeline-item" style="border-left-color: #a5b4fc; padding-bottom: 0;">
+            <div class="timeline-date">2022 — 2023</div>
+            <div class="timeline-title">Fullstack Developer</div>
+            <div style="font-weight: 500; margin: 0.1rem 0 0.2rem; color: #a5b4fc;">WeTop</div>
+            <p style="opacity:0.85; font-size:0.95rem;">Разработка SPA, админ-панелей, оптимизация Core Web Vitals, реализация микро-фронтендов.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Node.js</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">React</span>
+              <span class="tech-tag">Express</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TECH STACK -->
+      <section style="margin-bottom: 2.8rem;" class="fade-up delay-4">
+        <h2 class="section-title">🛠️ Технологии</h2>
+        <div class="grid-3">
+          <div class="stack-card"><div class="stack-title">⚛️ Frontend</div>React · Next.js · TypeScript · Tailwind · Redux Toolkit · Zustand · React Query</div>
+          <div class="stack-card"><div class="stack-title">⚙️ Backend</div>Node.js · PostgreSQL · Express · REST · GraphQL · Prisma</div>
+          <div class="stack-card"><div class="stack-title">🧰 Инструменты</div>Docker · GitHub Actions · Nginx · CI/CD · Vitest · Jest · Storybook · Figma</div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section style="margin-bottom: 2.8rem;" class="fade-up delay-5">
+        <h2 class="section-title">📌 Проекты</h2>
+        <div class="grid-2">
+          <div class="project-card">
+            <div style="font-weight: 700; font-size: 1.3rem;">Rentura CRM</div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.3rem 0 0.7rem;"><span class="tech-tag">React</span><span class="tech-tag">Next.js</span><span class="tech-tag">TypeScript</span><span class="tech-tag">FAST API</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Python</span></div>
+            <p style="opacity:0.85; font-size:0.95rem;">Lead Frontend Developer · архитектура CRM, модули, производительность, интеграция с бекендом.</p>
+            <a href="#" class="project-link">Подробнее →</a>
+          </div>
+          <div class="project-card">
+            <div style="font-weight: 700; font-size: 1.3rem;">Bali Style</div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.3rem 0 0.7rem;"><span class="tech-tag">Next.js</span><span class="tech-tag">Tailwind</span><span class="tech-tag">Node.js</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Express</span></div>
+            <p style="opacity:0.85; font-size:0.95rem;">Сайт-портфолио для студии дизайна, анимации, адаптив, SEO 100.</p>
+            <a href="https://bali-style.ru" class="project-link">Посмотреть сайт →</a>
+          </div>
+          <div class="project-card">
+            <div style="font-weight: 700; font-size: 1.3rem;">Nutrikot</div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.3rem 0 0.7rem;"><span class="tech-tag">React</span><span class="tech-tag">Next.js</span></div>
+            <p style="opacity:0.85; font-size:0.95rem;">Платформа для нутрициологов, личный кабинет, дашборд, графики.</p>
+            <a href="https://nutrikot.ru" class="project-link">Посмотреть →</a>
+          </div>
+          <div class="project-card">
+            <div style="font-weight: 700; font-size: 1.3rem;">Skladoff24</div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.3rem 0 0.7rem;"><span class="tech-tag">Tilda</span><span class="tech-tag">Хостинг</span></div>
+            <p style="opacity:0.85; font-size:0.95rem;">Lead · управление складом, аналитика, интеграция с 1С, микросервисы.</p>
+            <a href="https://skladoff24.ru" class="project-link">Подробнее →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS -->
+      <section style="margin-bottom: 2.8rem;" class="fade-up delay-6">
+        <h2 class="section-title">🏆 Достижения</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.8rem 1.2rem;">
+          <span class="achievement-badge">🏆 Lead Frontend Developer</span>
+          <span class="achievement-badge">🏆 10+ коммерческих проектов</span>
+          <span class="achievement-badge">🏆 Full Cycle Development</span>
+          <span class="achievement-badge">🏆 CRM Systems</span>
+          <span class="achievement-badge">🏆 SPA · PWA</span>
+          <span class="achievement-badge">🏆 Next.js 15</span>
+          <span class="achievement-badge">🏆 Lighthouse 100</span>
+        </div>
+      </section>
+
+      <!-- EDUCATION & LANGUAGES -->
+      <section style="margin-bottom: 2.8rem; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;" class="fade-up">
+        <div style="flex:1; min-width:200px;">
+          <h2 class="section-title" style="margin-bottom: 0.5rem;">🎓 Образование</h2>
+          <div class="glass-card" style="border-radius: 2rem; padding: 1.5rem;">
+            <div style="font-weight: 700;">TUIT · Факультет ИКТ</div>
+            <div style="opacity:0.8;">Бакалавр, 2018–2022</div>
+            <div style="margin-top:0.4rem; opacity:0.6; font-size:0.9rem;">Специализация: программная инженерия</div>
+          </div>
+        </div>
+        <div style="flex:1; min-width:160px;">
+          <h2 class="section-title" style="margin-bottom: 0.5rem;">🌐 Языки</h2>
+          <div class="glass-card" style="border-radius: 2rem; padding: 1.5rem;">
+            <div>🇷🇺 Русский — родной</div>
+            <div>🇺🇸 English — C1 (Advanced)</div>
+            <div>🇺🇿 Узбекский — родной</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="fade-up" style="padding-top: 0.5rem;">
+        <h2 class="section-title">📬 Контакты</h2>
+        <div class="glass-card" style="border-radius: 2.5rem; padding: 1.8rem 2rem;">
+          <div class="contact-row">
+            <a href="mailto:ibrokhim.ergeshev@mail.ru" class="contact-item">✉️ ibrokhim.ergeshev@mail.ru</a>
+            <a href="tel:+79932827031" class="contact-item">📱 +7 (993) 282 70 31</a>
+            <a href="https://github.com/89255620518" target="_blank" class="contact-item">🐙 GitHub</a>
+            <a href="https://t.me/ibrokhim_developer" target="_blank" class="contact-item">✈️ Telegram</a>
+            <a href="https://www.linkedin.com/in/%D0%B8%D0%B1%D1%80%D0%BE%D1%85%D0%B8%D0%BC-%D1%8D%D1%80%D0%B3%D0%B5%D1%88%D0%B5%D0%B2-9a2827404" target="_blank" class="contact-item">🔗 LinkedIn</a>
+            <a href="https://wa.me/9989932827031" target="_blank" class="contact-item">💬 WhatsApp</a>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 2.8rem; opacity:0.3; font-size:0.8rem; letter-spacing:0.04em; font-weight:400;">
+          © 2026 Иброхим Эргешев
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const toggle = document.getElementById('themeToggle');
+      const icon = document.getElementById('themeIcon');
+      const label = document.getElementById('themeLabel');
+      const body = document.body;
+
+      if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        body.classList.add('dark');
+        icon.textContent = '☀️';
+        label.textContent = 'Светлая';
+      }
+
+      toggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        if (body.classList.contains('dark')) {
+          icon.textContent = '☀️';
+          label.textContent = 'Светлая';
+          localStorage.setItem('theme', 'dark');
+        } else {
+          icon.textContent = '🌙';
+          label.textContent = 'Тёмная';
+          localStorage.setItem('theme', 'light');
+        }
+      });
+
+      document.getElementById('downloadPDF')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('📄 Экспорт PDF: используйте "Печать" (Ctrl+P) → "Сохранить как PDF" для получения качественного PDF-резюме.');
+        window.print();
+      });
+    })();
+  </script>
+</body>
+</html>
